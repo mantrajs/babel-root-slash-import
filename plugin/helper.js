@@ -6,6 +6,14 @@ export default function(path) {
     transformRelativeToRootPath(path, rootPathSuffix) {
       if (this.hasRoot(path)) {
         const withoutRoot = path.substring(1, path.length);
+
+        // Here's we detect the use of Meteor that interferes with path resolution
+        // global.meteorBabelHelpers is something we can see when
+        // running inside Meteor.
+        if (global.meteorBabelHelpers && path.startsWith(this.root)) {
+          return path;
+        }
+
         return `${this.root}${rootPathSuffix ? rootPathSuffix : ''}/${withoutRoot}`;
       }
       if (typeof path === 'string') {
