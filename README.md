@@ -1,5 +1,5 @@
 # Babel Root Import
-Babel plugin to add the opportunity to use `import` with root based paths.<br>
+Babel plugin to change the behaviour of `import` to root based paths.<br>
 
 ## Example
 ```javascript
