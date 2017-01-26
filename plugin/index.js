@@ -12,9 +12,13 @@ export default function({ types: t }) {
             var rootPathSuffix = state && state.opts && typeof state.opts.rootPathSuffix === 'string' ?
             '/' + state.opts.rootPathSuffix.replace(/^(\/)|(\/)$/g, '') :
                 '';
+            
+            var rootPath = state && state.opts && typeof state.opts.rootPath === 'string' ?
+                '/' + state.opts.rootPathSuffix.replace(/^(\/)|(\/)$/g, '') :
+                undefined;
 
             if(BabelRootImportHelper().hasRoot(givenPath)) {
-              path.node.source.value = BabelRootImportHelper().transformRelativeToRootPath(givenPath, rootPathSuffix);
+              path.node.source.value = BabelRootImportHelper().transformRelativeToRootPath(givenPath, rootPathSuffix, rootPath);
             }
           }
         }
