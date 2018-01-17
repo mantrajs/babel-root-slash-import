@@ -41,5 +41,14 @@ If you want a custom root because for example all your files are in the src/js f
 }
 ```
 
+## Don't let ESLint be confused
+If you use [eslint-plugin-import](https://github.com/benmosher/eslint-plugin-import) to validate imports it may be necessary to instruct ESLint to parse root imports to avoid breaking the rule `import/no-unresolved`. You can use [eslint-import-resolver-babel-root-slash-import](https://github.com/FredericRuaudel/eslint-import-resolver-babel-root-slash-import)
+
+```json
+    "import/resolver": {
+      "babel-root-slash-import": {}
+    }
+```
+
 ## Motivate
 If you like this project just give it a star :) I like stars.
