@@ -1,5 +1,9 @@
 # ChangeLog
 
+### v1.2.0
+
+Update to Babel v7.  Use standardjs instead of custom eslint.  Include 'prepare' script to support direct 'npm install' from git repo.
+
 ### v1.1.0
 
 Add support to use inside Meteor. Basically, we turn off plugin when running inside Meteor.

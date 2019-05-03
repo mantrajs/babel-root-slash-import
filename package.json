@@ -20,6 +20,7 @@
     "test": "npx mocha test/*.spec.js --require @babel/register --require config/mocha.js",
     "test-watch": "npx mocha test/*.spec.js --require @babel/register --require config/mocha.js --watch",
     "lint-js": "npx standard plugin",
+    "prepare": "npx babel -d build/ plugin/",
     "compile": "npx babel -d build/ plugin/"
   },
   "dependencies": {},
