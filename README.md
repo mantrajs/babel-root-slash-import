@@ -4,15 +4,19 @@ Babel plugin to change the behaviour of `import` to root based paths.<br>
 ## Example
 ```javascript
 // Usually
-import SomeExample from '../../../some/example.js';
+import SomeExample from '../../../some/example.js'
 
-// With Babel-Root-Importer
-import SomeExample from '/some/example.js';
+// With babel-root-slash-import
+import SomeExample from '/some/example.js'
 ```
 
 ## Install
 ```
-npm install babel-root-slash-import --save-dev
+npm install --save-dev babel-root-slash-import
+```
+
+```
+yarn add --dev babel-root-slash-import
 ```
 
 ## Use
@@ -26,7 +30,7 @@ Add a `.babelrc` file and write:
 ```
 or pass the plugin with the plugins-flag on CLI
 ```
-babel-node myfile.js --plugins babel-root-slash-import
+npx babel-node myfile.js --plugins babel-root-slash-import
 ```
 
 ## Extras
